@@ -27,9 +27,9 @@
             <div class="d-flex justify-content-center flex-column gap-2 form">
                 <div class="pointer w-fit">
                     <div class="d-flex gap-2" onclick="goBack()">
-                    <span class="material-icons fs-4">arrow_back_ios_new</span>
-                    <span>Back to login</span>
-                </div>
+                        <span class="material-icons fs-4">arrow_back_ios_new</span>
+                        <span>Back to login</span>
+                    </div>
                 </div>
                 <div class="spacer"></div>
                 <span class="title">Forgot your password?</span>
@@ -45,7 +45,7 @@
                         <label for="email">Email</label>
                     </div>
                     <div class="spacer"></div>
-                    <button class="primary-btn" type="submit">Submit</button>
+                    <button class="primary-btn" type="button" onclick="openDialog()">Submit</button>
                 </form>
             </div>
             <div class="d-flex justify-content-center bg">
@@ -55,11 +55,26 @@
             </div>
         </div>
     </div>
+
+    <dialog id="myDialog">
+        <h2>หัวข้อ</h2>
+        <p>นี่คือเนื้อหาใน Dialog</p>
+        <button onclick="closeDialog()">ปิด</button>
+    </dialog>
+
 </body>
 
 <script>
     function goBack() {
         window.history.back()
+    }
+
+    function openDialog() {
+        dialog.showModal(); // เปิดแบบ Modal
+    }
+
+    function closeDialog() {
+        dialog.close(); // ปิด Dialog
     }
 </script>
 
