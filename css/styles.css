@@ -4,6 +4,7 @@
     --bg-f4: #F4F4F4;
     --text-error: #FF8682;
     --c-sub-title: #313131;
+    --c-disable: #808080ab;
 
     --white: #FFFFFF;
     --black: #000000;
@@ -19,8 +20,11 @@
     --font-size-20: 20px;
     --font-size-22: 22px;
     --font-size-24: 24px;
+    --font-size-26: 26px;
     --font-size-28: 28px;
+    --font-size-30: 30px;
     --font-size-32: 32px;
+    --font-size-36: 36px;
     --font-size-40: 40px;
     --font-size-l-2: 22px;
     --font-size-m-2: 20px;
@@ -35,6 +39,10 @@
 body {
     width: -webkit-fill-available;
     font-family: var(--font-family-main);
+}
+
+p {
+    margin: 0;
 }
 
 .w-full {
@@ -58,7 +66,7 @@ body {
 }
 
 .div-login {
-    max-height: 816px;
+    /* max-height: 816px; */
     justify-self: center;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -171,6 +179,10 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
     height: 10px;
 }
 
+button {
+    font-family: var(--font-family-main);
+}
+
 .primary-btn {
     font-size: var(--font-size-14);
     font-weight: 600;
@@ -182,20 +194,145 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
     justify-content: center;
     align-items: center;
     border: none;
+    cursor: pointer;
 }
 
-.primary-btn:active {
-    background-color: var(--main);
+.primary-btn:focus {
+    background-color: var(--main) !important;
+}
+
+.primary-btn:disabled {
+    background-color: var(--c-disable) !important;
+    cursor: not-allowed;
 }
 
 .pointer {
     cursor: pointer;
 }
 
+dialog[open] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    gap: 24px;
+    border: none;
+    border-radius: 24px;
+    font-family: var(--font-family-main);
+}
+
+dialog .icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    padding: 40px;
+    display: flex;
+    background-color: var(--main);
+    color: var(--white);
+    font-size: var(--font-size-36) !important;
+}
+
+dialog .icon img {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+
+dialog .title {
+    font-size: var(--font-size-36);
+    color: var(--main);
+    font-weight: 700;
+    width: -webkit-fill-available;
+}
+
+dialog .subTitle {
+    font-size: var(--font-size-20);
+    width: -webkit-fill-available;
+}
+
+.forgetSuccess {
+    max-width: 775px;
+    width: -webkit-fill-available;
+}
+
+dialog:-internal-dialog-in-top-layer::backdrop {
+    position: fixed;
+    inset: 0px;
+    background: #00000080;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Prompt', sans-serif;
+    /* ปรับฟอนต์ได้ */
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+    /* ซ่อน input ดั้งเดิม */
+}
+
+.custom-checkbox input[type="checkbox"]+span:not(.lever):before {
+    display: none;
+}
+
+.custom-checkbox .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background-color: white;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    position: relative;
+    padding-left: 0 !important;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+.box {
+    background-color: #4caf50;
+    /* เขียว */
+    border-color: #4caf50;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+.box::after {
+    content: "";
+    width: 8px;
+    height: 15.67px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    position: absolute;
+    top: -2px;
+    justify-self: anchor-center;
+
+
+}
+
+.custom-checkbox input[type="checkbox"]:checked+.box::after {
+    opacity: 1;
+}
+
+.custom-checkbox .label {
+    font-size: var(--font-size-14);
+    width: -webkit-fill-available;
+}
+
 @media (min-width: 1024px) {
 
     .div-login {
-        padding: 50px;
+        padding: 100px;
         gap: 100px;
     }
 
@@ -208,14 +345,37 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
         gap: 50px;
     }
 
-        .form {
-            /* width: -webkit-fill-available; */
-            /* padding: 0 50px; */
-        }
+    .form .title {
+        font-size: var(--font-size-30);
+    }
 
-        .bg {
-            /* width: -webkit-fill-available; */
-        }
+    .forgetSuccess {
+        max-width: 550px;
+        width: -webkit-fill-available;
+    }
+
+    dialog .title {
+        font-size: var(--font-size-30);
+    }
+
+    dialog .subTitle {
+        font-size: var(--font-size-18);
+    }
+
+    dialog[open] {
+        padding: 40px;
+    }
+
+    .primary-btn {
+        padding: 10px;
+    }
+
+    dialog .icon {
+        width: 120px;
+        height: 120px;
+        padding: 30px;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -226,21 +386,48 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
 
     .form {
         width: -webkit-fill-available;
-        height: 60%;
-        padding: 0 30px;
+        height: max-content;
+        padding: 30px;
+    }
+
+    .form .title {
+        font-size: var(--font-size-26);
     }
 
     .bg {
         width: -webkit-fill-available;
-        height: 40%;
+        height: max-content;
     }
 
     .bg .card-bg {
         border-radius: 0;
     }
 
-    .card-bg img{
+    .card-bg img {
         max-width: 400px;
-        
+    }
+
+    dialog[open] {
+        padding: 50px 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    dialog .icon {
+        width: 93px;
+        height: 93px;
+        padding: 25px;
+    }
+
+    dialog .title {
+        font-size: var(--font-size-20);
+    }
+
+    dialog .subTitle {
+        font-size: var(--font-size-13);
+    }
+
+    .primary-btn {
+        padding: 10px;
     }
 }

@@ -56,16 +56,20 @@
         </div>
     </div>
 
-    <dialog id="myDialog">
-        <h2>หัวข้อ</h2>
-        <p>นี่คือเนื้อหาใน Dialog</p>
-        <button onclick="closeDialog()">ปิด</button>
+    <dialog class="forgetSuccess" id="myDialog">
+        <div class="icon"><img src="./../assets/icons/icon-check.png" alt=""></div>
+        <span class="title">ระบบได้ทำการส่งลิงก์สำหรับตั้งรหัสผ่านใหม่ไปยังอีเมลของคุณเรียบร้อยแล้ว</span>
+        <span class="subTitle">กรุณาตรวจสอบกล่องจดหมาย (รวมถึงอีเมลขยะ) และดำเนินการตามขั้นตอนที่ระบุ</span>
+        <button class="primary-btn" type="button" onclick="closeDialog()"><span class="material-icons">check</span>&nbsp;เข้าใจแล้ว</button>
     </dialog>
 
 </body>
 
 <script>
+    const dialog = document.getElementById('myDialog');
+
     function goBack() {
+        debugger
         window.history.back()
     }
 
