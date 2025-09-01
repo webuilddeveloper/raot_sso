@@ -404,7 +404,7 @@ dialog:-internal-dialog-in-top-layer::backdrop {
     border-radius: 24px;
     padding: 30px;
     gap: 20px;
-    max-width: 400px;
+    max-width: 950px;
 }
 
 .card-form .title {
@@ -438,6 +438,23 @@ hr {
     gap: 40px;
 }
 
+.w-fit {
+    width: fit-content;
+}
+
+.btn-add {
+    color: var(--white) !important;
+    font-size: var(--font-size-20);
+    border: none;
+    border-radius: 25px;
+    padding: 5px 15px;
+    height: auto;
+    box-shadow: none !important;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
 @media (min-width: 1024px) {
 
@@ -609,6 +626,10 @@ hr {
 
     .card-form li {
         font-size: var(--font-size-16) !important;
+    }
+
+    .group-form {
+        flex-direction: column;
     }
 
 }
