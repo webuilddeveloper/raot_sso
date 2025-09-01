@@ -442,7 +442,7 @@ hr {
     width: fit-content;
 }
 
-.btn-add {
+.btn-add,.btn-add:active:hover {
     color: var(--white) !important;
     font-size: var(--font-size-20);
     border: none;
@@ -520,7 +520,11 @@ hr {
     }
 
     .btn {
-        font-size: var(--font-size-16);
+        font-size: var(--font-size-16) !important;
+    }
+
+    .btn-add {
+        font-size: var(--font-size-16) !important;
     }
 
     .div-btn-profile-action {
@@ -617,7 +621,11 @@ hr {
     }
 
     .btn {
-        font-size: var(--font-size-16);
+        font-size: var(--font-size-16) !important;
+    }
+
+    .btn-add {
+        font-size: var(--font-size-16) !important;
     }
 
     .card-form .title {
