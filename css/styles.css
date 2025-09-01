@@ -5,6 +5,8 @@
     --text-error: #FF8682;
     --c-sub-title: #313131;
     --c-disable: #808080ab;
+    --BC8D3B: #BC8D3B;
+
 
     --white: #FFFFFF;
     --black: #000000;
@@ -316,8 +318,6 @@ dialog:-internal-dialog-in-top-layer::backdrop {
     position: absolute;
     top: -2px;
     justify-self: anchor-center;
-
-
 }
 
 .custom-checkbox input[type="checkbox"]:checked+.box::after {
@@ -328,6 +328,116 @@ dialog:-internal-dialog-in-top-layer::backdrop {
     font-size: var(--font-size-14);
     width: -webkit-fill-available;
 }
+
+.drop-shadow {
+    box-shadow: 0px 0px 20px 0px #0000001A;
+}
+
+.inner-shadow {
+    box-shadow: 0px 0px 20px 0px #00000040 inset;
+}
+
+.card-profile {
+    border-radius: 21px;
+    padding: 100px 30px 30px 30px;
+    max-width: 946px;
+    position: relative;
+}
+
+.img-profile {
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #F0F0F0;
+    position: absolute;
+    top: -90px;
+
+}
+
+.img-profile img {
+    width: -webkit-fill-available;
+    height: auto;
+    transform: scale(0.6);
+}
+
+.card-profile .title {
+    font-size: var(--font-size-32);
+    font-weight: 700;
+    line-height: normal;
+}
+
+.btn-1,
+.btn-1:hover:active:focus {
+    background-color: var(--main) !important;
+
+}
+
+.btn-2,
+.btn-2:hover:active:focus {
+    background-color: var(--main-solid) !important;
+}
+
+.btn-3,
+.btn-3:hover:active:focus {
+    background-color: var(--BC8D3B) !important;
+}
+
+.btn,
+.btn:active:hover {
+    color: var(--white) !important;
+    font-size: var(--font-size-24);
+    border: none;
+    border-radius: 25px;
+    padding: 5px 25px;
+    height: auto;
+    width: -webkit-fill-available;
+    box-shadow: none !important;
+}
+
+.btn img {
+    height: auto;
+    width: 30px;
+}
+
+.card-form {
+    border-radius: 24px;
+    padding: 30px;
+    gap: 20px;
+    max-width: 400px;
+}
+
+.card-form .title {
+    color: var(--main) !important;
+    font-size: var(--font-size-24);
+    font-weight: 700;
+    text-align: center;
+}
+
+.card-form li {
+    font-size: var(--font-size-20) !important;
+}
+
+dl,
+ol,
+ul {
+    margin: 0;
+    padding-left: 2rem !important;
+}
+
+li {
+    list-style-type: disc !important;
+}
+
+hr {
+    margin: 0;
+    border: 1px solid #D9D9D9
+}
+
+.div-card-form {
+    gap: 40px;
+}
+
 
 @media (min-width: 1024px) {
 
@@ -375,6 +485,43 @@ dialog:-internal-dialog-in-top-layer::backdrop {
         height: 120px;
         padding: 30px;
     }
+
+    .div-profile {
+        padding: 30px;
+    }
+
+    .div-card-form {
+        gap: 30px;
+    }
+
+    .card-form {
+        max-width: -webkit-fill-available;
+    }
+
+    .card-profile .title {
+        font-size: var(--font-size-26);
+    }
+
+    .btn {
+        font-size: var(--font-size-16);
+    }
+
+    .div-btn-profile-action {
+        gap: 12px !important;
+    }
+
+    .card-profile {
+        padding: 100px 20px 20px 20px;
+    }
+
+    .card-form .title {
+        font-size: var(--font-size-20);
+    }
+
+    .card-form li {
+        font-size: var(--font-size-16) !important;
+    }
+
 
 }
 
@@ -430,4 +577,38 @@ dialog:-internal-dialog-in-top-layer::backdrop {
     .primary-btn {
         padding: 10px;
     }
+
+    .div-profile {
+        padding: 110px 20px 20px 20px;
+    }
+
+    .div-btn-profile-action {
+        flex-direction: column;
+    }
+
+    .div-card-form {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-form {
+        max-width: -webkit-fill-available;
+    }
+
+    .card-profile .title {
+        font-size: var(--font-size-20);
+    }
+
+    .btn {
+        font-size: var(--font-size-16);
+    }
+
+    .card-form .title {
+        font-size: var(--font-size-20);
+    }
+
+    .card-form li {
+        font-size: var(--font-size-16) !important;
+    }
+
 }
